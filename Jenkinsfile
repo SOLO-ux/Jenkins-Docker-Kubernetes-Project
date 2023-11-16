@@ -7,7 +7,7 @@ pipeline {
 	environment {
 		PROJECT_ID = 'jenkins-405317'
                 CLUSTER_NAME = 'k8s-cluster'
-                LOCATION = 'us-west4-b'
+                LOCATION = 'us-central1-c'
                 CREDENTIALS_ID = 'kubernetes'		
 	}
 	

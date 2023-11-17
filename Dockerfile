@@ -1,3 +1,5 @@
 FROM tomcat:8.0.20-jre8
 
-COPY /Kubernetes/target/customer_management_system.war /usr/local/tomcat/webapps/
+RUN mkdir /usr/local/tomcat/webapps/myapp
+
+COPY /Kubernetes/CounterWebApp.war /usr/local/tomcat/webapps/CounterWebApp.war

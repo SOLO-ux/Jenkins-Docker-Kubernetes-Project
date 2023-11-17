@@ -1,10 +1,6 @@
 
-FROM nginx:alpine
+FROM tomcat:8.0.20-jre8
 
-RUN mkdir /usr/share/nginx/html/custom
+RUN mkdir /usr/local/tomcat/webapps/myapp
 
-COPY /kubernetes/main/webapp/index.html /usr/share/nginx/html/custom/
-COPY /kubernetes/main/webapp/css /usr/share/nginx/html/custom/
-COPY /kubernetes/main/webapp/images /usr/share/nginx/html/custom/
-COPY /kubernetes/main/webapp/js /usr/share/nginx/html/custom/
-
+COPY /kubernetes/src/main/webapp/index.html /usr/local/tomcat/webapps/

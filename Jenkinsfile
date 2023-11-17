@@ -17,10 +17,14 @@ pipeline {
 			    checkout scm
 		    }
 	    }
-	    
-	    
-	    
-	    stage('Test') {
+
+	    stage('Build') {
+		    steps {
+			    sh 'mvn clean package'
+		    }
+	    }
+	    	    
+	    	    stage('Test') {
 		    steps {
 			    echo "Testing..."
 			    sh 'mvn test'

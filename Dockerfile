@@ -1,2 +1,4 @@
-FROM nginx:latest
-COPY kubernetes/index.html /usr/share/nginx/html/index.html
+FROM nginx:alpine
+
+COPY default.conf /etc/nginx/conf.d/
+COPY kubernetes/index.html /usr/share/nginx/html/

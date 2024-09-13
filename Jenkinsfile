@@ -1,7 +1,7 @@
 pipeline {
     agent any
 	tools {
-		maven 'Maven'
+		maven 'maven'
 	}
 	
 	environment {
@@ -45,7 +45,7 @@ pipeline {
 			    script {
 				    echo "Push Docker Image"
 				    withCredentials([string(credentialsId: 'nantenaina181', variable: 'nantenaina181')]) {
-            				sh "docker login -u nantenaina181 -p ${dockerhub}"
+            				sh "docker login -u nantenaina181 -p ${nantenaina181}"
 				    }
 				        myimage.push("${env.BUILD_ID}")
 				    

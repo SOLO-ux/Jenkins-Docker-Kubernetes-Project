@@ -5,10 +5,10 @@ pipeline {
 	}
 	
 	environment {
-		PROJECT_ID = 'jenkins-405317'
+		PROJECT_ID = 'jenkins-435307'
                 CLUSTER_NAME = 'k8s-cluster'
                 LOCATION = 'us-central1-c'
-                CREDENTIALS_ID = 'eacab724-e2fe-45b7-a86c-dee1aacb6909'		
+                CREDENTIALS_ID = '9ea5a090-a34f-4855-bf08-dd01eeb1a7ee'		
 	}
 	
     stages {

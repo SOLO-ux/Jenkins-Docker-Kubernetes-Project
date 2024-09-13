@@ -1,4 +1,4 @@
-# Utiliser l'image Nginx officielle
+
 FROM nginx:latest
 
 # Créer un dossier pour l'application (Nginx sert les fichiers directement depuis /usr/share/nginx/html par défaut)

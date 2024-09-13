@@ -1,5 +1,14 @@
-FROM tomcat:8.0.20-jre8
+# Utiliser l'image Nginx officielle
+FROM nginx:latest
 
-RUN mkdir /usr/local/tomcat/webapps/myapp
+# Créer un dossier pour l'application (Nginx sert les fichiers directement depuis /usr/share/nginx/html par défaut)
+RUN mkdir -p /usr/share/nginx/html/myapp
 
-COPY /kubernetes/index.html /usr/local/tomcat/webapps/index.html
+# Copier votre fichier index.html dans le dossier de Nginx
+COPY /kubernetes/index.html /usr/share/nginx/html/myapp/index.html
+
+# Exposer le port 80 pour Nginx
+EXPOSE 80
+
+# Lancer Nginx en mode non-daemonisé (avant-plan)
+CMD ["nginx", "-g", "daemon off;"]

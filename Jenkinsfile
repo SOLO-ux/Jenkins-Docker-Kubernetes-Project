@@ -39,19 +39,24 @@ pipeline {
 			    }
 		    }
 	    }
+
+
+	stage("Push Docker Image") {
+    steps {
+        script {
+            echo "Push Docker Image"
+            withCredentials([string(credentialsId: 'nantenaina181', variable: 'nantenaina181')]) {
+                sh "docker login -u nantenaina181 -p ${nantenaina181}"
+            }
+            myimage.push("${env.BUILD_ID}")
+            myimage.push("latest")  // Pousser aussi un tag 'latest'
+        }
+    }
+}
+
+
 	    
-	    stage("Push Docker Image") {
-		    steps {
-			    script {
-				    echo "Push Docker Image"
-				    withCredentials([string(credentialsId: 'nantenaina181', variable: 'nantenaina181')]) {
-            				sh "docker login -u nantenaina181 -p ${nantenaina181}"
-				    }
-				        myimage.push("${env.BUILD_ID}")
-				    
-			    }
-		    }
-	    }
+	 
 	    
 	    stage('Deploy to K8s') {
 		    steps{

@@ -2,7 +2,7 @@
 FROM nginx:latest
 
 # Copier les fichiers construits par Maven dans le répertoire où Nginx sert les fichiers
-COPY target/*.war /usr/share/nginx/html/myapp
+COPY /kubernetes/*.war /usr/share/nginx/html/myapp
 
 # Exposer le port 80
 EXPOSE 80

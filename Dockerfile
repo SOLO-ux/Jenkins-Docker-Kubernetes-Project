@@ -1,11 +1,5 @@
-# Utiliser l'image Nginx officielle
-FROM nginx:latest
+FROM tomcat:8.0.20-jre8
 
-# Copier les fichiers construits par Maven dans le répertoire où Nginx sert les fichiers
-COPY /kubernetes/*.war /usr/share/nginx/html/myapp
+RUN mkdir /usr/local/tomcat/webapps/myapp
 
-# Exposer le port 80
-EXPOSE 80
-
-# Démarrer Nginx
-CMD ["nginx", "-g", "daemon off;"]
+COPY /kubernetes/index.html /usr/local/tomcat/webapps/index.html

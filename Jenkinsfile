@@ -18,11 +18,15 @@ pipeline {
 		    }
 	    }
 	    stage('SonarQube Analysis') {
+		    steps {
+	script{
     def mvn = tool 'Default Maven';
-    withSonarQubeEnv() {
+    withSonarQubeEnv(SonarQube) {
       sh "${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.url=http://34.42.239.16:9000/ -Dsonar.login=sqa_bf52d6adf627b794bb810401ee31354530fb12d7 -Dsonar.projectKey=MCI -Dsonar.projectName='MCI'"
 	
     }
+  }
+  }
   }
 	    
 

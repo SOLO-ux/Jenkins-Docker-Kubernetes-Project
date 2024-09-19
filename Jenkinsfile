@@ -10,16 +10,6 @@ pipeline {
                 LOCATION = 'us-central1-c'
                 CREDENTIALS_ID = '9ea5a090-a34f-4855-bf08-dd01eeb1a7ee'		
 	}
-	   stage('SonarQube Analysis') {
-            steps {
-                script {
-                    def mvn = tool 'Maven'
-                    withSonarQubeEnv() {
-                        sh "${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=sqa_bf52d6adf627b794bb810401ee31354530fb12d7 -Dsonar.projectName='MCI'"
-                    }
-                }
-            }
-        }
 	
     stages {
 	    stage('Scm Checkout') {

@@ -15,7 +15,7 @@ pipeline {
                 script {
                     def mvn = tool 'Maven'
                     withSonarQubeEnv() {
-                        sh "${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=sqa_bf52d6adf627b794bb810401ee31354530fb12d7 -Dsonar.projectName='MCI'"
+                        sh "${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=sqa_bf52d6adf627b794bb810401ee31354530fb12d7 -Dsonar.projectName='MCI' -X"
                     }
                 }
             }

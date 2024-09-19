@@ -21,13 +21,13 @@ pipeline {
     steps {
         script {
             withSonarQubeEnv('Sonar-server') {
-                withCredentials([string(credentialsId: 'Sonar-Token', variable: 'Sonar-Token')]) {
-                    sh "${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.url=http://34.42.239.16:9000/ -Dsonar.login=${Sonar-Token} -Dsonar.projectKey=local -Docker.java.binaries=. -Dsonar.projectName='MCI'"
+               
+      sh "${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=MCI -Dsonar.projectName='MCI'"
                 }
             }
         }
     }
-}
+
 
 	    
 

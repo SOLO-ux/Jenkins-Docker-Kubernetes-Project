@@ -21,7 +21,7 @@ pipeline {
     steps {
         script {
             def mvn = tool name: 'Maven', type: 'maven'
-            withSonarQubeEnv('SonarQube') {
+            withSonarQubeEnv('Sonar-server') {
                 withCredentials([string(credentialsId: 'Sonar-Token', variable: 'Sonar-Token')]) {
                     sh "${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.url=http://34.42.239.16:9000/ -Dsonar.login=${SONAR_TOKEN} -Dsonar.projectKey=MCI -Dsonar.projectName='MCI'"
                 }

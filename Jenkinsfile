@@ -22,11 +22,17 @@ pipeline {
       sh "${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=MCI -Dsonar.projectName='MCI'"
 
 
-		stage('SonarQube analysis') {
-    withSonarQubeEnv(credentialsId: 'Sonar-Token', installationName: 'Sonar-server') { // You can override the credential to be used
-      sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar'
-    }
-  }
+	     stage('SonarQube analysis') {
+            steps {
+                withSonarQubeEnv('Sonar-server') {
+                    sh 'mvn sonar:sonar \
+                        -Dsonar.projectKey=MCI \
+                        -Dsonar.projectName="MCI" \
+                        -Dsonar.host.url=http://34.42.239.16:9000 \
+                        -Dsonar.login=sqp_b74069b12d4462e3ed5afcc8d99b01d18d0bad09'
+                }
+            }
+        }
 
 		    
 

@@ -17,9 +17,6 @@ pipeline {
 			    checkout scm
 		    }
 	    }
-	    
-               
-      sh "${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=MCI -Dsonar.projectName='MCI'"
 
 
 	     stage('SonarQube analysis') {

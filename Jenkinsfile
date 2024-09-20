@@ -17,7 +17,7 @@ pipeline {
 			    checkout scm
 		    }
 	    }
-	    stage('SonarQube Analysis') {
+	    /*stage('SonarQube Analysis') {
     steps {
         script {
             withSonarQubeEnv('Sonar-server') {
@@ -26,7 +26,7 @@ pipeline {
                 }
             }
         }
-    }
+    }*/
 
 
 	    

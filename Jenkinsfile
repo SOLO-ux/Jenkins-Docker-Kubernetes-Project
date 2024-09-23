@@ -38,7 +38,7 @@ stage('Snyk Analysis') {
       steps {
         
         snykSecurity(
-          snykInstallation: 'Snyk',
+          snykInstallation: 'SnykSCA',
           snykTokenId: 'snyksca',
 
           additionalArguments: '--all-projects --detection-depth=<DEPTH>'

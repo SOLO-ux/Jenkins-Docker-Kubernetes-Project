@@ -31,13 +31,20 @@ pipeline {
             }
         }
 
-		    
-		stage('Snyk Analysis') {
-            steps {
-                snykSecurity failOnIssues: true, snykInstallation: 'Snyk', snykTokenId: 'snyksca'
-            }
-        }
+		
+            
+       
+stage('Snyk Analysis') {
+      steps {
+        
+        snykSecurity(
+          snykInstallation: 'Snyk',
+          snykTokenId: 'snyksca',
 
+          additionalArguments: '--all-projects --detection-depth=<DEPTH>'
+        )
+      }
+    }
 	    
 
 	    stage('Build') {

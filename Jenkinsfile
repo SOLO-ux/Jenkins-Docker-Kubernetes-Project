@@ -34,8 +34,7 @@ pipeline {
 		    
 		stage('Snyk Analysis') {
             steps {
-                snykSecurity failOnIssues: true, snykTokenId: 'snyksca'
-		sh 'snyk test --all-projects'
+                snykSecurity failOnIssues: true, snykInstallation: 'Snyk', snykTokenId: 'snyksca'
             }
         }
 

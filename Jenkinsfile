@@ -41,7 +41,7 @@ stage('Snyk Analysis') {
           snykInstallation: 'SnykSCA',
           snykTokenId: 'snyksca',
 
-          additionalArguments: '--all-projects --detection-depth=<DEPTH>'
+          additionalArguments: '--all-projects --detection-depth=3'
         )
       }
     }

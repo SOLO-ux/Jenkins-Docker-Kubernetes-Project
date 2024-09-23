@@ -8,7 +8,8 @@ pipeline {
 		PROJECT_ID = 'jenkins-435307'
                 CLUSTER_NAME = 'k8s-cluster'
                 LOCATION = 'us-central1-c'
-                CREDENTIALS_ID = '9ea5a090-a34f-4855-bf08-dd01eeb1a7ee'		
+                CREDENTIALS_ID = '9ea5a090-a34f-4855-bf08-dd01eeb1a7ee'	
+		SNYK_TOKEN = credentials('9243f494-5de1-48a4-8aca-825fc677adac)
 	}
 	
     stages {
@@ -36,13 +37,10 @@ pipeline {
        
 stage('Snyk Analysis') {
       steps {
-        
-        snykSecurity(
-          snykInstallation: 'SnykSCA',
-          snykTokenId: 'snyksca',
 
-          additionalArguments: '--all-projects --detection-depth=3'
-        )
+		sh "snyk auth $SNYK_TOKEN" // Authentifie Snyk avec le token
+                sh '/var/lib/jenkins/tools/io.snyk.jenkins.tools.SnykInstallation/SnykSCA/snyk-linux test --json --severity-threshold=low --all-projects --detection-depth=3'
+
       }
     }
 	    

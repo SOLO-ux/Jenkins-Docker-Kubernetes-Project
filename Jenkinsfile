@@ -9,7 +9,7 @@ pipeline {
                 CLUSTER_NAME = 'k8s-cluster'
                 LOCATION = 'us-central1-c'
                 CREDENTIALS_ID = '9ea5a090-a34f-4855-bf08-dd01eeb1a7ee'	
-		SNYK_TOKEN = credentials('9243f494-5de1-48a4-8aca-825fc677adac)
+		SNYK_TOKEN = credentials('9243f494-5de1-48a4-8aca-825fc677adac')
 	}
 	
     stages {

@@ -920,7 +920,9 @@
 														data-widget_type="heading.default">
 														<div class="elementor-widget-container">
 															<h2 class="elementor-heading-title elementor-size-default">
-																Ethical <span style="color:hsl(92, 100%, 50%)">Spice
+																Ethical <span style="color:hsl(161, 84%, 50%)">Spice
+
+
 																	Sourcing</span></h2>
 														</div>
 													</div>

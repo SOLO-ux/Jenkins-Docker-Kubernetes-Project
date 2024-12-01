@@ -919,12 +919,28 @@
 														data-settings="{&quot;_ob_harakiri_writing_mode&quot;:&quot;inherit&quot;,&quot;_ob_perspektive_use&quot;:&quot;no&quot;,&quot;_ob_shadough_use&quot;:&quot;no&quot;,&quot;_ob_allow_hoveranimator&quot;:&quot;no&quot;,&quot;_ob_widget_stalker_use&quot;:&quot;no&quot;}"
 														data-widget_type="heading.default">
 														<div class="elementor-widget-container">
+
+
+
+
+
+
 															<h2 class="elementor-heading-title elementor-size-default">
+
 																Ethical <span style="color:hsl(161, 84%, 50%)">Spice
 
 
 																	Sourcing</span></h2>
 														</div>
+
+
+
+
+
+
+
+
+
 													</div>
 													<div class="elementor-element elementor-element-7b51110 ob-harakiri-inherit elementor-widget elementor-widget-heading"
 														data-id="7b51110" data-element_type="widget"
